@@ -3,7 +3,7 @@
 Yleisiä linkkejä:
 
 * [Linkki sovellukseeni](https://www.hamalkre.users.cs.helsinki.fi/FINDAFRIEND)
-* [Linkki dokumentaatiooni](https://www.github.com)
+* [Linkki dokumentaatiooni](https://github.com/Radytin/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Aihekuvaus
 FIND-A-FRIEND on sovellus, jossa kavereita etsivät voivat löytää seuraa erilaisiin aktiviteetteihin.  
