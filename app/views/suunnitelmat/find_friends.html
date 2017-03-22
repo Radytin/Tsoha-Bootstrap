@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Etsi kavereita!</h1>
+
+  <p>
+          <strong>Etsin:</strong> 
+      <div class="checkbox">
+      <label>
+        <input type="checkbox">
+        Olutseuraa
+      </label>
+          <div class="checkbox">
+      <label>
+        <input type="checkbox">
+        Peliseuraa
+      </label>     
+    </div>
+          <div class="checkbox">
+      <label>
+        <input type="checkbox">
+        Opiskeluseuraa
+      </label>
+          </div> 
+    <a href="#" class="btn btn-success">Hae valituilla ehdoilla</a>
+  </p>
+
+
+    <tbody>
+      
+      <tr>
+        <td><a href="#">Sirpa-Liisa</a></td>
+        <td>21</td>
+        <td>Etsii: olutseuraa</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}
