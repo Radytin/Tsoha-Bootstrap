@@ -1,13 +1,16 @@
 -- Lisää CREATE TABLE lauseet tähän tiedostoon
 CREATE TABLE Kayttaja(
- user_id serial PRIMARY KEY,
+ user_id SERIAL PRIMARY KEY,
  username VARCHAR (20) UNIQUE NOT NULL,
  password VARCHAR (45) NOT NULL,
- bio VARCHAR (400) NOT NULL
+ bio VARCHAR (400) NOT NULL,
+ olutseura BOOLEAN NOT NULL DEFAULT FALSE,
+ peliseura BOOLEAN NOT NULL DEFAULT FALSE,
+ opiskeluseura BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE Kaverit(
- relation_id serial PRIMARY KEY,
+ relation_id SERIAL PRIMARY KEY,
  lisaajaID INTEGER REFERENCES Kayttaja(user_id),
  lisattavaID INTEGER REFERENCES Kayttaja(user_id)
 );
@@ -18,8 +21,9 @@ aihe varchar (20) NOT NULL,
 sisalto varchar (600) NOT NULL
 );
 
-CREATE TABLE VastaanotettuViesti(
- received_id serial PRIMARY KEY,
+CREATE TABLE KayttajanViesti(
+ sent_id SERIAL PRIMARY KEY,
+ viestinID INTEGER REFERENCES Viesti(msg_id),
  lahettajaID INTEGER REFERENCES Kayttaja(user_id),
  vastaanottajaID INTEGER REFERENCES Kayttaja(user_id)
 );
