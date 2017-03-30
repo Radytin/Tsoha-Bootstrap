@@ -1,6 +1,6 @@
 <?php
 
-class FindFriendsController extends BaseController{
+class UserController extends BaseController{
     
     public static function index(){
         
@@ -12,5 +12,6 @@ class FindFriendsController extends BaseController{
         $users = User::findId($user_id);
         View::make('user/show_users.html', array('user' => $user));
     }
+    
 }
 

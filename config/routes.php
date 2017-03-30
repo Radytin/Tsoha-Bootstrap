@@ -22,9 +22,16 @@
   });
   
   
-  $routes->get('/findusers', function(){
-      FindFriendsController::index();
+  $routes->get('/users', function(){
+      UserController::index();
 });
- $routes->get('/findusers/:user_id', function(){
-      FindFriendsController::findusers();
+ $routes->get('/users/:user_id', function(){
+      UserController::findusers();
+});
+$routes->post('/users', function(){
+  UserController::store();
+});
+
+$routes->get('/users/new', function(){
+  UserController::create();
 });

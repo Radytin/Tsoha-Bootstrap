@@ -47,79 +47,32 @@ class User extends BaseModel{
          }
          
          return null;
-        
             
-        
         
     }
-    //Kesken
-    public static function findOlutseura(){
-         $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE olutseura');
-         $query->execute();
-         $rows->$query->fetch();
-         $users=array();
-         foreach ($rows as $row){
-             $users = new User(array(
-                 'user_id' => $row['user_id'],
-                 'username'=> $row['username'],
-                 'bio' => $row['bio'],
-                 'olutseura' => $row['olutseura'],
-                 'peliseura' => $row['peliseura'],
-                 'opiskeluseura' => $row['olutseura']
-                 
-            
-                 
-                 
-             ));
-         }
-         return $users;
+    public static function store(){
         
+        $params = $_POST;
+        $users =  New User(array(
+            'username' => $params['username'],
+            'password' => $params['password'],
+            'bio' => $params['bio']
+            
+        ));
+         Kint::dump($params);
+        $game->save();
+         //Redirect::to('/users/' . $user->user_id, array('message' => 'Kiitos rekisteröitymisestä!'));
+          
     }
-    public static function findPeliseura(){
-         $query=DB::connection() ->prepare('SELECT * FROM Kayttaja WHERE peliseura');
-         $query->execute();
-         $rows->$query->fetch();
-         $users=array();
-         foreach ($rows as $row){
-             $users = new User(array(
-                 'user_id' => $row['user_id'],
-                 'username'=> $row['username'],
-                 'bio' => $row['bio'],
-                 'olutseura' => $row['olutseura'],
-                 'peliseura' => $row['peliseura'],
-                 'opiskeluseura' => $row['olutseura']
-                 
-            
-                 
-                 
-             ));
-         }
-         return $users;
-        
-    }
-    public static function findOpiskeluseura(){
-         $query=DB::connection() ->prepare('SELECT * FROM Kayttaja WHERE opiskeluseura');
-         $query->execute();
-         $rows->$query->fetch();
-         $users=array();
-         foreach ($rows as $row){
-             $users = new User(array(
-                 'user_id' => $row['user_id'],
-                 'username'=> $row['username'],
-                 'bio' => $row['bio'],
-                 'olutseura' => $row['olutseura'],
-                 'peliseura' => $row['peliseura'],
-                 'opiskeluseura' => $row['olutseura']
-                 
-            
-                 
-                 
-             ));
-         }
-         return $users;
-        
+    public function save(){
+        $query = DB::connection()->prepare('INSERT INTO Game (username, password, bio) VALUES (:username, :password, :bio) RETURNING user_id');
+        $query -> execute(array('username' => $this->username, 'password' => $this->password, 'bio' => $this->bio));
+        $row = $query->fetch();
+        Kint::trace();
+        Kint::dump($row);
+        // $this->user_id = $row['user_id'];
+         
     }
     
-
 }
 
