@@ -6,7 +6,7 @@ Yleisiä linkkejä:
 * [Linkki dokumentaatiooni](https://github.com/Radytin/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 * [Linkki profiilisivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/showfriend)
 * [Linkki profiilin muokkaussivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/edit)
-* [Linkki listaussivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/findfriends)
+* [Linkki listaussivulle](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/users)
 * [Linkki kirjautumissivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/login)
 
 ## Aihekuvaus
