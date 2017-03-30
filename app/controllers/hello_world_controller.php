@@ -19,14 +19,12 @@
     public static function show_friend(){
     View::make('suunnitelmat/show_friend.html');
     }
-  
-  
-
-
-
 
     public static function sandbox(){
-      // Testaa koodiasi täällä
-       View::make('helloworld.html');
+      $users = User::all();
+      
+      Kint::dump($users);
+    
+      
     }
   }

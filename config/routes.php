@@ -20,3 +20,8 @@
   $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
   });
+  
+  
+  $routes->get('/findusers', function(){
+      FindFriendsController::findusers();
+});
