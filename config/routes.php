@@ -25,13 +25,15 @@
   $routes->get('/users', function(){
       UserController::index();
 });
- $routes->get('/users/:user_id', function(){
-      UserController::findusers();
-});
+
 $routes->post('/users', function(){
   UserController::store();
 });
 
 $routes->get('/users/new', function(){
   UserController::create();
+});
+
+ $routes->get('/users/:user_id', function(){
+      UserController::findusers();
 });

@@ -2,7 +2,7 @@
 {% block content %}
   <h1>Rekisteröidy käyttäjäksi</h1>
 
-  <form method="post" action="{{base_path}}/user">
+  <form method="post" action="{{base_path}}/users">
     <div class="form-group">
       <label>Käyttäjätunnus</label>
       <input name="username" class="form-control" type="text">
@@ -10,16 +10,16 @@
 
     <div class="form-group">
       <label>Salasana</label>
-      <input name="publisher" class="form-control" type="text">
+      <input name="password" class="form-control" type="text">
     </div>
 
     <div class="form-group">
       <label>Bio</label>
-      <input name="published" class="form-control" type="text">
+      <input name="bio" class="form-control" type="text">
     </div>
 
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Lisää</button>
+      <button type="submit" class="btn btn-primary">Rekisteröidy</button>
     </div>
   </form>
 {% endblock %}

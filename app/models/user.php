@@ -50,29 +50,7 @@ class User extends BaseModel{
             
         
     }
-    public static function store(){
-        
-        $params = $_POST;
-        $users =  New User(array(
-            'username' => $params['username'],
-            'password' => $params['password'],
-            'bio' => $params['bio']
-            
-        ));
-         Kint::dump($params);
-        $game->save();
-         //Redirect::to('/users/' . $user->user_id, array('message' => 'Kiitos rekisteröitymisestä!'));
-          
-    }
-    public function save(){
-        $query = DB::connection()->prepare('INSERT INTO Game (username, password, bio) VALUES (:username, :password, :bio) RETURNING user_id');
-        $query -> execute(array('username' => $this->username, 'password' => $this->password, 'bio' => $this->bio));
-        $row = $query->fetch();
-        Kint::trace();
-        Kint::dump($row);
-        // $this->user_id = $row['user_id'];
-         
-    }
+    
     
 }
 
