@@ -23,5 +23,8 @@
   
   
   $routes->get('/findusers', function(){
+      FindFriendsController::index();
+});
+ $routes->get('/findusers/:user_id', function(){
       FindFriendsController::findusers();
 });

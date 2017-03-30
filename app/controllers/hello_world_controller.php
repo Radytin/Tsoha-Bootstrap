@@ -22,8 +22,10 @@
 
     public static function sandbox(){
       $users = User::all();
+      $sirpu =  User::findId(1);
       
       Kint::dump($users);
+      Kint::dump($sirpu);
     
       
     }

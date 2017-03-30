@@ -2,7 +2,7 @@
 
 class User extends BaseModel{
     
-    public $user_id, $username, $password, $bio, $olutseura, $peliseura, $opiskeluseura;
+    public $user_id, $username, $password, $bio;
      public function __construct($attributes) {
         parent::__construct($attributes);
     }
@@ -10,8 +10,6 @@ class User extends BaseModel{
     public static function all(){
         //Alusta kysely tietokantayhteydellä
          $query = DB::connection()->prepare('SELECT * FROM Kayttaja');
-         //Suorita kysely
-     
          $query->execute();
          $rows = $query->fetchAll();
          $users=array();
@@ -20,6 +18,7 @@ class User extends BaseModel{
              $users = new User(array(
                  'user_id' => $row['user_id'],
                  'username'=> $row['username'],
+                 'password'=> $row['password'],
                  'bio' => $row['bio']
                 
              ));
@@ -31,13 +30,14 @@ class User extends BaseModel{
     public static function findId($user_id){
         $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE user_id = :user_id LIMIT 1');
         $query->execute(array('user_id' => $user_id));
-        $row->$query->fetch();
+        $row = $query->fetch();
         
          
          if($row){
-             $users = new User(array(
+             $user = new User(array(
                  'user_id' => $row['user_id'],
                  'username'=> $row['username'],
+                 'password'=> $row['password'],
                  'bio' => $row['bio']
              
                  
