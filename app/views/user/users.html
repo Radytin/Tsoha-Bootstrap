@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
   <h1>Etsi kavereita!</h1>
-  
   <p>Etkö ole vielä jäsen?</p>
     <p>
     <a href="{{base_path}}/users/new" class="btn btn-success">Rekisteröidy tästä!</a>
@@ -12,34 +11,10 @@
       <tr>
         <th>Käyttäjätunnus</th>
         <th>Bio</th>
-        <th></th>
+        
       </tr>
     </thead>
 
-  <p>
-          <strong>Etsin:</strong> 
-      <div class="checkbox">
-      <label>
-        <input type="checkbox">
-        Olutseuraa
-      </label>
-          <div class="checkbox">
-      <label>
-        <input type="checkbox">
-        Peliseuraa
-      </label>     
-    </div>
-          <div class="checkbox">
-      <label>
-        <input type="checkbox">
-        Opiskeluseuraa
-      </label>
-          </div> 
-    <a href="#" class="btn btn-success">Hae valituilla ehdoilla</a>
-  </p>
-
-
-      
        <tbody>
       {% for user in users %}
         <tr>
@@ -50,6 +25,5 @@
         </tr>
       {% endfor %}
     </tbody>
-  </table>
   </table>
 {% endblock %}

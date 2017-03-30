@@ -15,7 +15,7 @@ class User extends BaseModel{
          $users=array();
          
          foreach ($rows as $row){
-             $users = new User(array(
+             $users[] = new User(array(
                  'user_id' => $row['user_id'],
                  'username'=> $row['username'],
                  'password'=> $row['password'],
