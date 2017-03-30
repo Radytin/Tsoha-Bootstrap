@@ -8,6 +8,8 @@ Yleisiä linkkejä:
 * [Linkki profiilin muokkaussivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/edit)
 * [Linkki listaussivulle](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/users)
 * [Linkki kirjautumissivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/login)
+* [Linkki rekisteröitymissivulle](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/users/new)
+
 
 ## Aihekuvaus
 FIND-A-FRIEND on sovellus, jossa kavereita etsivät voivat löytää seuraa erilaisiin aktiviteetteihin.  

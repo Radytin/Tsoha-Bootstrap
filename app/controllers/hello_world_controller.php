@@ -4,7 +4,7 @@
 
     public static function index(){
      
-   	 View::make('suunnitelmat/main.html');
+   	 View::make('home.html');
     }
     public static function find_friends(){
     View::make('suunnitelmat/find_friends.html');

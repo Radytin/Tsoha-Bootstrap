@@ -50,6 +50,13 @@ class User extends BaseModel{
             
         
     }
+    public function save(){
+        $query = DB::connection()->prepare('INSERT INTO Kayttaja (username, password, bio) VALUES (:username, :password, :bio) RETURNING user_id');
+        $query -> execute(array('username' => $this->username, 'password' => $this->password, 'bio' => $this->bio));
+        $row = $query->fetch();
+        $this->user_id = $row['user_id'];
+         
+    }
     
     
 }

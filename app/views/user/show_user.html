@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Sirpa-Liisa</h1>
-  <!-- Painikkeet tähän -->
+{% for user in user %}
+  <h1>{{user.username}}</h1>
   <p>
    <a href="#" class="btn btn-default">Lähetä viesti</a>
   </p>
   <p>
    <a href="#" class="btn btn-default">Lisää kaveriksi</a>
   </p>
+  <p>{{user.bio}}</p>
  
-
+   {% endfor %}
   </p>
 {% endblock %}

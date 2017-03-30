@@ -35,5 +35,5 @@ $routes->get('/users/new', function(){
 });
 
  $routes->get('/users/:user_id', function(){
-      UserController::findusers();
+      UserController::show();
 });
