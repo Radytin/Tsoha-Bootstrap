@@ -21,7 +21,12 @@
 
       foreach($this->validators as $validator){
         // Kutsu validointimetodia tässä ja lisää sen palauttamat virheet errors-taulukkoon
+            $error = $this->{$validator}();
+            if ($error != null) {
+                $errors[] = $error;
+          
       }
+    }
 
       return $errors;
     }

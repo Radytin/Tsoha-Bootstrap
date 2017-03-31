@@ -5,6 +5,7 @@ class User extends BaseModel{
     public $user_id, $username, $password, $bio;
      public function __construct($attributes) {
         parent::__construct($attributes);
+        $this->validators = array('validate_name', 'validate_password');
     }
     
     public static function all(){
@@ -56,6 +57,60 @@ class User extends BaseModel{
         $row = $query->fetch();
         $this->user_id = $row['user_id'];
          
+    }
+    public function update(){
+        $query = DB::connection()->prepare('UPDATE Kayttaja (username, password, bio) SET (:username, :password, :bio) RETURNING user_id');
+        $query -> execute(array('username' => $this->username, 'password' => $this->password, 'bio' => $this->bio));
+        $row = $query->fetch();
+        $this->user_id = $row['user_id'];
+         
+    }
+      public function destroy(){
+        $query = DB::connection()->prepare('DELETE FROM Kayttaja WHERE user_id = :user_id LIMIT 1 ');
+        $query->execute(array('user_id' => $this->user_id));
+         
+    }
+    //TODO tee yleisiä validointimetodeita Basemodeliin ja refaktoroi.
+    public function validate_name(){
+        $errors = array();
+        if($this-> username == '' | $this-> username == null){
+            $errors[] ='Käyttäjätunnus ei saa olla tyhjä';
+        }
+        if(strlen($this->username) < 3){
+            $errors[]='Käyttäjätunnuksen pitää olla vähintään kolme merkkiä pitkä!';
+        }
+         return $errors;
+    }
+    
+     public function validate_password(){
+        $errors = array();
+        if($this-> password == '' | $this-> password == null){
+            $errors[] ='Salasana ei saa olla tyhjä';
+        }
+        if(strlen($this->password) < 5){
+            $errors[]='Salansanan pitää olla vähintään kolme merkkiä pitkä!';
+        }
+         return $errors;
+    }
+    
+    public static function authenticate($username, $password){
+        $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE username = :username AND password = :password LIMIT 1');
+        $query = execute(array('username' => $username, 'password' => $password));
+       $row = $query->fetch();
+       if($row){
+           return new User(array(
+               'user_id'=>$row['user_id'],
+               'username'=>$row['username'],
+               'password'=>$row['password'],
+               'bio'=>$row['bio']
+           ));
+           
+           
+       }else{
+           return null;
+           
+       }
+       
     }
     
     

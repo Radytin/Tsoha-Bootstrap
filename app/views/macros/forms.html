@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% macro destroy_button() %}
+  <form method="post" action="{{base_path}}/users/{{user.user_id}}/destroy" style="display: inline-block;">
+    <button type="submit" class="btn btn-danger">Poista käyttäjätunnuksesi</button>
+  </form>
+{% endmacro %}
+{%macro update_button()%}
+ <form method="post" action="{{base_path}}/users/{{user.user_id}}/edit" style="display: inline-block;">
+  <button type="submit">Tallenna muutokset</button>
+</form>
+{%endmacro}
+
+
+
+
+
+
+
+
+
+{% endblock %}

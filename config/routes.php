@@ -1,29 +1,25 @@
 <?php
 
-  $routes->get('/', function() {
+  
+$routes->get('/', function() {
     HelloWorldController::index();
   });
-   $routes->get('/findfriends', function() {
+$routes->get('/findfriends', function() {
     HelloWorldController::find_friends();
   });
-   $routes->get('/edit', function() {
-    HelloWorldController::edit();
-  });
-   $routes->get('/login', function() {
-    HelloWorldController::login();
-  });
-   $routes->get('/showfriend', function() {
+
+$routes->get('/showfriend', function() {
     HelloWorldController::show_friend();
   });
   
 
-  $routes->get('/hiekkalaatikko', function() {
+$routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
   });
   
   
-  $routes->get('/users', function(){
-      UserController::index();
+$routes->get('/users', function(){
+  UserController::index();
 });
 
 $routes->post('/users', function(){
@@ -34,6 +30,22 @@ $routes->get('/users/new', function(){
   UserController::create();
 });
 
- $routes->get('/users/:user_id', function(){
-      UserController::show();
+$routes->get('/users/:user_id', function(){
+  UserController::show();
+});
+$routes->get('/users/:id/edit', function($user_id){
+  UserController::edit($user_id);
+});
+$routes->post('/users/:id/edit', function($user_id){
+  UserController::update($user_id);
+});
+
+$routes->post('/users/:id/destroy', function($user_id){
+  UserController::destroy($user_id);
+});
+$routes->get('/login', function(){
+UserController::login();
+});
+$routes->post('/login', function(){
+UserController::handle_login();
 });

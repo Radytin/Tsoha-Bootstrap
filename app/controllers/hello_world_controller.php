@@ -9,9 +9,6 @@
     public static function find_friends(){
     View::make('suunnitelmat/find_friends.html');
     }
-    public static function edit(){
-    View::make('suunnitelmat/edit.html');
-    }
   
     public static function login(){
     View::make('suunnitelmat/login.html');
@@ -21,12 +18,15 @@
     }
 
     public static function sandbox(){
-      $users = User::all();
-      $sirpu =  User::findId(1);
-      
-      Kint::dump($users);
-      Kint::dump($sirpu);
-    
+      $urpo = new User(array(
+          'username'=>'u',
+          'password' => 'ur',
+          'bio' => 'Hei hei'
+          
+          
+      ));
+    $errors = $urpo->errors();
+    Kint::dump($errors);
       
     }
   }
