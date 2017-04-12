@@ -35,7 +35,7 @@ class UserController extends BaseController{
         Redirect::to('/users/' . $user->user_id, array('message' => 'Kiitos rekisteröitymisestä!'));
           
     } else {
-        View::make('users/new.html', array('errors' => $errors, 'attributes' => $attributes));
+        View::make('user/register.html', array('errors' => $errors, 'attributes' => $attributes));
         
     }
     
