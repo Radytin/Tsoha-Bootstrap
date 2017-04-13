@@ -2,25 +2,24 @@
 
 class UserController extends BaseController{
     
+    
     public static function index(){
-        
         $users = User::all();
         View::make('user/users.html', array('users' => $users));
     }
     
     public static function show($user_id){
-        
         $user = User::findId($user_id);
         View::make('user/show_user.html', array('user' => $user));
     }
     public static function create(){
+    
         View::make('user/register.html');
     }
 
     
 
     public static function store(){
-        
         $params = $_POST;
         $attributes = array(
             'username' => $params['username'],
@@ -41,11 +40,13 @@ class UserController extends BaseController{
     
   }
   public static function edit($user_id){
+      self::check_logged_in();
       $user = User::findId($user_id);
       View::make('user/edit.html', array('attributes' => $user));
   }
   
   public static function update($user_id){
+      self::check_logged_in();
       $params = $_POST;
       
       $attributes = array(
@@ -67,6 +68,7 @@ class UserController extends BaseController{
       
   }
   public static function destroy(){
+       self::check_logged_in();
       $user = new User(array('user_id' => $user_id));
       $user -> destroy();
       Redirect::to('/users', array('message' => 'Käyttäjätunnuksesi on poistettu onnistuneesti!'));
@@ -85,6 +87,10 @@ class UserController extends BaseController{
       Redirect::to('/', array('message' => 'Tervetuloa takaisin ' . $user->username . '!'));
       }
       
+  }
+  public static function logout(){
+      $_SESSION['user']= null;
+      Redirect::to('/login', array('message' => 'Olet kirjautunut ulos!'));
   }
     
 }
