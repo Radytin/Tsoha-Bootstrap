@@ -18,15 +18,8 @@
     }
 
     public static function sandbox(){
-      $urpo = new User(array(
-          'username'=>'u',
-          'password' => 'ur',
-          'bio' => 'Hei hei'
-          
-          
-      ));
-    $errors = $urpo->errors();
-    Kint::dump($errors);
+    $user = User::findId(1);
+    Kint::dump($user);
       
     }
   }
