@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Lähetä uusi viesti käyttäjälle!</h1>
+
+<li><a href="{{base_path}}/users/{{user.user_id}}">Palaa takaisin</a></li>
+  <h1>Lähetä uusi viesti käyttäjälle {{user.username}}!</h1>
 
   <form method="post" action="">
     <div class="form-group">
@@ -12,4 +14,6 @@
       <label>Viesti</label>
       <input name="sisalto" class="form-control" type="text">
     </div>
+      <button type="submit" class="btn btn-primary">Lähetä</button>
+  </form>
 {% endblock %}

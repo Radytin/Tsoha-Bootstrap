@@ -55,3 +55,6 @@ UserController::logout();
 $routes->get('/messages', function(){
 MessageController::inbox();
 });
+$routes->get('/users/:user_id/message', function($user_id){
+UserController::createMessage($user_id);    
+});

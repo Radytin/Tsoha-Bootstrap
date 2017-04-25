@@ -12,9 +12,14 @@ class UserController extends BaseController{
         $user = User::findId($user_id);
         View::make('user/show_user.html', array('user' => $user));
     }
+    
     public static function create(){
     
         View::make('user/register.html');
+    }
+    public static function createMessage($user_id){
+        $user = User::findId($user_id);
+        View::make('message/newmessage.html', array('user' => $user));
     }
 
     
