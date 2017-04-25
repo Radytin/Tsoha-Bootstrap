@@ -70,28 +70,7 @@ class User extends BaseModel{
         $query->execute(array('user_id' => $this->user_id));
          
     }
-    //TODO tee yleisiä validointimetodeita Basemodeliin ja refaktoroi.
-    public function validate_name(){
-        $errors = array();
-        if($this-> username == '' | $this-> username == null){
-            $errors[] ='Käyttäjätunnus ei saa olla tyhjä';
-        }
-        if(strlen($this->username) < 3){
-            $errors[]='Käyttäjätunnuksen pitää olla vähintään kolme merkkiä pitkä!';
-        }
-         return $errors;
-    }
     
-     public function validate_password(){
-        $errors = array();
-        if($this-> password == '' | $this-> password == null){
-            $errors[] ='Salasana ei saa olla tyhjä';
-        }
-        if(strlen($this->password) < 5){
-            $errors[]='Salansanan pitää olla vähintään kolme merkkiä pitkä!';
-        }
-         return $errors;
-    }
     
     public static function authenticate($username, $password){
         $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE username = :username AND password = :password LIMIT 1');

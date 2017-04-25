@@ -31,7 +31,7 @@ class UserController extends BaseController{
         $errors = $user ->errors();
         if(count($errors) == 0){
         $user-> save();
-        Redirect::to('/users/' . $user->user_id, array('message' => 'Kiitos rekisteröitymisestä!'));
+        Redirect::to('/', array('message' => 'Kiitos rekisteröitymisestä!'));
           
     } else {
         View::make('user/register.html', array('errors' => $errors, 'attributes' => $attributes));

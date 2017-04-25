@@ -30,8 +30,8 @@ $routes->get('/users/new', function(){
   UserController::create();
 });
 
-$routes->get('/users/:user_id', function(){
-  UserController::show();
+$routes->get('/users/:user_id', function($user_id){
+  UserController::show($user_id);
 });
 $routes->get('/users/:id/edit', function($user_id){
   UserController::edit($user_id);

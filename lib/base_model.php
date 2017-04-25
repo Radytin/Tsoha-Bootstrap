@@ -3,6 +3,7 @@
   class BaseModel{
     // "protected"-attribuutti on käytössä vain luokan ja sen perivien luokkien sisällä
     protected $validators;
+    
 
     public function __construct($attributes = null){
       // Käydään assosiaatiolistan avaimet läpi
@@ -29,6 +30,29 @@
     }
 
       return $errors;
+    }
+    
+    
+    public function validate_name(){
+        $errors = array();
+        if($this-> username == '' | $this-> username == null){
+            $errors[] ='Käyttäjätunnus ei saa olla tyhjä';
+        }
+        if(strlen($this->username) < 3){
+            $errors[]='Käyttäjätunnuksen pitää olla vähintään kolme merkkiä pitkä!';
+        }
+         return $errors;
+    }
+    
+     public function validate_password(){
+        $errors = array();
+        if($this-> password == '' | $this-> password == null){
+            $errors[] ='Salasana ei saa olla tyhjä';
+        }
+        if(strlen($this->password) < 5){
+            $errors[]='Salansanan pitää olla vähintään viisi merkkiä pitkä!';
+        }
+         return $errors;
     }
 
   }
