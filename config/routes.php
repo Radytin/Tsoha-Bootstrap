@@ -50,5 +50,8 @@ $routes->post('/login', function(){
 UserController::handle_login();
 });
 $routes ->post('/logout', function(){
-    UserController::logout();    
+UserController::logout();    
+});
+$routes->get('/messages', function(){
+MessageController::inbox();
 });

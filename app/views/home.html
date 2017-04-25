@@ -4,10 +4,14 @@
   <h1>Tervetuloa FIND-A-FRIENDiin!</h1>
   
   <p>Find-A-Friend on sovellus, jonka avulla voit etsiä itsellesi uusia ystäviä helposti!</p>
+  {% if user_logged_in %}
+  <p>Olet kirjautunut sisään.</p>
+  {% else %}
+  <p>Et ole kirjautunut sisään.</p>
+  {% endif %} 
   
   
-  <p>Et ole kirjautunut sisään</p>
-
+  
   
   
 {% endblock %}
