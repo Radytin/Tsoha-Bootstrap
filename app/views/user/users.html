@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
   <h1>Etsi ystäviä!</h1>
+  {% if user_logged_in %}
+  <p>Tervetuloa etsimään ystäviä!</p>
+   {% else %}
   <p>Etkö ole vielä jäsen? Vain jäsenenä voit lähettää viestejä uusille ystävillesi!</p>
     <p>
     <a href="{{base_path}}/users/new" class="btn btn-success">Rekisteröidy tästä!</a>
   </p>
-  
+  {% endif %}
   <p><strong>Ystäviä etsivät myös</strong></p>
 
   <table class="table table-striped table-bordered">
