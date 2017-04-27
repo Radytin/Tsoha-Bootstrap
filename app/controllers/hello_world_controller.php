@@ -18,7 +18,7 @@
     }
 
     public static function sandbox(){
-    $user = User::findId(1);
+    $user = $_SESSION['user'];;
     Kint::dump($user);
       
     }

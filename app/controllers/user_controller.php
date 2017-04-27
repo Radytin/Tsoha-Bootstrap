@@ -44,8 +44,9 @@ class UserController extends BaseController{
     }
     
   }
-  public static function edit($user_id){
+  public static function edit(){
       self::check_logged_in();
+      $user_id = $_SESSION['user'];
       $user = User::findId($user_id);
       View::make('user/edit.html', array('attributes' => $user));
   }

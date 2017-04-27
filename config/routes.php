@@ -33,14 +33,14 @@ $routes->get('/users/new', function(){
 $routes->get('/users/:user_id', function($user_id){
   UserController::show($user_id);
 });
-$routes->get('/users/:user_id/edit', function($user_id){
-  UserController::edit($user_id);
+$routes->get('/edit', function(){
+  UserController::edit();
 });
-$routes->post('/users/:user_id/edit', function($user_id){
+$routes->post('/edit', function($user_id){
   UserController::update($user_id);
 });
 
-$routes->post('/users/:user_id/destroy', function($user_id){
+$routes->post('/destroy', function($user_id){
   UserController::destroy($user_id);
 });
 $routes->get('/login', function(){
