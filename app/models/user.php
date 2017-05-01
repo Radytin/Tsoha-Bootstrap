@@ -92,6 +92,12 @@ class User extends BaseModel{
        
    
     }
+    public static function add(){
+        $query = DB::connection()->prepare('INSERT INTO Kaverit(lisaajaID, lisattavaID) VALUES (:adder, :user_id)');
+        $query -> execute(array('adder' => $this->adder, 'user_id' => $this->user_id));
+        $row = $query->fetch();
+        $this->user_id = $row['user_id'];
+    }
     
     
 }

@@ -6,9 +6,14 @@
    <a href="{{base_path}}/users/{{user.user_id}}/message" class="btn btn-default">Lähetä viesti</a>
   </p>
   <p>
-   <a href="#" class="btn btn-default">Lisää kaveriksi</a>
+   <form method="post" action="{{base_path}}/users/{{user.userid}}">
+    <input type="hidden" name="user_id" value="{{user.user_id}}">   
+    <button type="submit" class="btn btn-primary">Lisää kaveriksi</button>
   </p>
+</form>
   <p>{{user.bio}}</p>
+  
+  <p><strong>Käyttäjän {{user.username}} kaverit</strong></p>
  
  
   </p>

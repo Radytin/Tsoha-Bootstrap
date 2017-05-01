@@ -33,6 +33,9 @@ $routes->get('/users/new', function(){
 $routes->get('/users/:user_id', function($user_id){
   UserController::show($user_id);
 });
+$routes->post('/users/:user_id', function($user_id){
+    UserController::add_friend($user_id);
+});
 $routes->get('/edit', function(){
   UserController::edit();
 });
