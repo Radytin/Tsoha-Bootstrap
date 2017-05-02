@@ -32,9 +32,10 @@ $routes->get('/users/new', function(){
 
 $routes->get('/users/:user_id', function($user_id){
   UserController::show($user_id);
+  FriendController::show_all($user_id);
 });
 $routes->post('/users/:user_id', function($user_id){
-    FriendController::add_friend($user_id);
+FriendController::add_friend($user_id);
 });
 $routes->get('/edit', function(){
   UserController::edit();
@@ -60,4 +61,7 @@ MessageController::inbox();
 });
 $routes->get('/users/:user_id/message', function($user_id){
 UserController::createMessage($user_id);    
+});
+$routes->post('/users/:user_id/message', function($user_id){
+    MessageController::send($user_id);    
 });

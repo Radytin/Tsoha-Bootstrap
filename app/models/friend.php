@@ -2,17 +2,17 @@
 
 class Friend extends BaseModel{
     
-  public $adder_id, $friend_id;
+  public $relation_id, $adder_id, $friend_id;
   
   public function __construct($attributes) {
         parent::__construct($attributes);
     }
   
     public static function add(){
-        $query = DB::connection()->prepare('INSERT INTO Kaverit(lisaajaID, lisattavaID) VALUES (:adder_id, :friend_id)');
+        $query = DB::connection()->prepare('INSERT INTO Kaverit(lisaajaID, lisattavaID) VALUES (:adder_id, :friend_id) RETURNING relation_id');
         $query -> execute(array('adder_id' => $this->adder_id, 'friend_id' => $this->friend_id));
         $row = $query->fetch();
-        $this->friend_id = $row['friend_id'];
+        $this->relation_id = $row['relation_id'];
     }
     
     public static function all_friends(){

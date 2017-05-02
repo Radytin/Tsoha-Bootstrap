@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+ {% if user_logged_in %}
   <h1>{{user.username}}</h1>
   <p>
    <a href="{{base_path}}/users/{{user.user_id}}/message" class="btn btn-default">Lähetä viesti</a>
@@ -20,7 +20,9 @@
              
         </tr>
       {% endfor %}
- 
- 
+  {% else %}
+  <p>Tämä alue on vain rekisteröityneille käyttäjille!</p>
+ {% endif %}
   </p>
+  
 {% endblock %}
