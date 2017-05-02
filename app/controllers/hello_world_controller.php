@@ -18,9 +18,8 @@
     }
 
     public static function sandbox(){
-    $user_id = $_SESSION['user'];;
-    $user = User::findId($user_id);
-    Kint::dump($user);
+    $friends =  FriendController::show_all(1);
+    Kint::dump($friends);
       
     }
   }

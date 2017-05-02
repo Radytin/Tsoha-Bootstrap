@@ -1,2 +1,5 @@
-INSERT INTO Kayttaja VALUES(nextval('kayttaja_user_id_seq'::regclass),'Sirpu','salasana123','Hei, olen Sirpa-Liisa');
-INSERT INTO Kayttaja VALUES(nextval('kayttaja_user_id_seq'::regclass),'Tero','salasana123','Hei, olen Tero');
+INSERT INTO Kaverit VALUES(nextval('kaverit_relation_id_seq'::regclass),'1','2');
+INSERT INTO Kaverit VALUES(nextval('kaverit_relation_id_seq'::regclass),'3','4');
+
+
+

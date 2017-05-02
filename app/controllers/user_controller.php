@@ -99,23 +99,7 @@ class UserController extends BaseController{
       Redirect::to('/login', array('message' => 'Olet kirjautunut ulos!'));
   }
   
-  public static function add_friend(){
-      self::check_logged_in();
-       $params = $_POST;
-       
-       $adder = $_SESSION['user'];
-       
-      $attributes = array(
-          'user_id'=> $params['user_id']
-          
-      );
-      $user = new User($attributes);
-      $user->add();
-      Redirect::to('/', array('message' => 'Kaveri lisätty!'));
-       
-       
-      
-  }
+  
     
 }
 
