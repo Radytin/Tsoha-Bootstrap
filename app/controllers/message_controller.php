@@ -10,7 +10,7 @@ class MessageController extends BaseController{
         $sender_id = $_SESSION['user'];
         $attributes = array(
             'sender_id'=>$sender_id,
-            'receiver_id'=>$user_id,
+            'receiver_id'=>$params['user_id'],
             'subject' => $params['subject'],
             'message' => $params['message']  
         );
@@ -23,6 +23,7 @@ class MessageController extends BaseController{
   }
   
    public static function show_messages(){
+       $user_id = $_SESSION['user'];
        $messages = Message::all_messages($user_id);
        View::make('message/inbox.html', array('messages' => $messages));
     }

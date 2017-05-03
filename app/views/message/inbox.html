@@ -2,5 +2,14 @@
 {% block content %}
 
 <h1>Sinulle lähetetyt viestit</h1>
+{% for message in messages %}
+ <tr>
+          <td>{{message.subject}}</td>
+          <td>{{message.message}}</td>
+  
+             
+        </tr>
+
+{% endfor %}
 
 {% endblock %}

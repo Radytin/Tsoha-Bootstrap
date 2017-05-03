@@ -14,6 +14,7 @@
       <label>Viesti</label>
       <input name="message" class="form-control" type="text">
     </div>
+      <input type="hidden" name="user_id" value="{{user.user_id}}" />
       <button type="submit" class="btn btn-primary">Lähetä</button>
   </form>
 {% endblock %}
