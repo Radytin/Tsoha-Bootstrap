@@ -2,13 +2,8 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](https://www.hamalkre.users.cs.helsinki.fi/FINDAFRIEND)
+* [Linkki sovellukseeni](www.hamalkre.users.cs.helsinki.fi/FINDAFRIEND)
 * [Linkki dokumentaatiooni](https://github.com/Radytin/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
-* [Linkki profiilisivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/showfriend)
-* [Linkki profiilin muokkaussivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/edit)
-* [Linkki listaussivulle](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/users)
-* [Linkki kirjautumissivun suunnitelmaan](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/login)
-* [Linkki rekisteröitymissivulle](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/users/new)
 
 
 ## Aihekuvaus
