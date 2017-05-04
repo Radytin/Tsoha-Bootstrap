@@ -34,8 +34,8 @@ $routes->get('/users/:user_id', function($user_id){
   UserController::show($user_id);
   FriendController::show_all($user_id);
 });
-$routes->post('/users/:user_id', function($user_id){
-FriendController::add_friend($user_id);
+$routes->post('/users/:user_id/add', function(){
+FriendController::add_friend();
 });
 $routes->get('/edit', function(){
   UserController::edit();

@@ -1,7 +1,7 @@
 <?php
 class FriendController extends BaseController{
     
-  public static function add_friend($user_id){
+  public static function add_friend(){
       self::check_logged_in();
        $params = $_POST;
        $adder_id = $_SESSION['user'];
@@ -20,7 +20,8 @@ class FriendController extends BaseController{
   }  
   
   public static function show_all($user_id){
-        $friends = Friend::all_friends($user_id);
+        $adder_id =$user_id;
+        $friends = Friend::all_friends($adder_id);
         View::make('user/show_user.html', array('friends' => $friends));
     }
     
