@@ -32,11 +32,13 @@ $routes->get('/users/new', function(){
 
 $routes->get('/users/:user_id', function($user_id){
   UserController::show($user_id);
-  FriendController::show_all($user_id);
 });
 $routes->post('/users/:user_id/add', function(){
 FriendController::add_friend();
 });
+$routes->get('/users/:user_id/friends', function($user_id){
+ FriendController::show_all($user_id);
+ });
 $routes->get('/edit', function(){
   UserController::edit();
 });

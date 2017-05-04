@@ -1,12 +1,6 @@
 <?php
 
 class UserController extends BaseController{
-    
-    public static function logged_user(){
-      $user_id = $_SESSION['user'];
-      $user = User::findId($user_id);
-      View::make('base.html', array('user' => $user));
-    }
 
     
     public static function index(){

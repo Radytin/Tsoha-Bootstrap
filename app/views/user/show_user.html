@@ -12,15 +12,9 @@
   </p>
 </form>
   <p>{{user.bio}}</p>
-  
-  <p><strong>Käyttäjän {{user.username}} kaverit</strong></p>
-   {% for friend in friends %}
-        <tr>
-          <td>{{friend.username}}</td>
-  
-             
-        </tr>
-      {% endfor %}
+  <p>
+   <a href="{{base_path}}/users/{{user.user_id}}/friends">Käyttäjän kaverilista</a>
+  </p>
   {% else %}
   <p>Tämä alue on vain rekisteröityneille käyttäjille!</p>
  {% endif %}

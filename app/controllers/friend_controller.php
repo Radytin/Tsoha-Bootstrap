@@ -22,7 +22,7 @@ class FriendController extends BaseController{
   public static function show_all($user_id){
         $adder_id =$user_id;
         $friends = Friend::all_friends($adder_id);
-        View::make('user/show_user.html', array('friends' => $friends));
+        View::make('user/friendlist.html', array('friends' => $friends));
     }
     
 }

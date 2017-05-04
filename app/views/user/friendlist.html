@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+  <p><strong>Käyttäjän kaverit</strong></p>
+   {% for friend in friends %}
+        <tr>
+            <td>{{friend.name}}</td><br>
+  
+             
+        </tr>
+      {% endfor %}
+  </p>
+  
+{% endblock %}
