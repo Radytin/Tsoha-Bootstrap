@@ -2,13 +2,21 @@
 {% block content %}
 
 <h1>Sinulle lähetetyt viestit</h1>
-{% for message in messages %}
- <tr>
-          <td>{{message.subject}}</td>
-          <td>{{message.message}}</td>
+{% for message in messages %}          
+  <table>
+  <tr>
+    <th>Lähettäjä</th>
+    <th>Aihe</th>
+    <th>Viesti</th>
+  </tr>
+  <tr>
+      <td><a href="{{base_path}}/users/{{message.sender_id}}">Lähettäjä</a></td>
+    <td>{{message.subject}}</td>
+    <td>{{message.message}}</td>
+  </tr>
   
-             
-        </tr>
+  </tr>
+</table>        
 
 {% endfor %}
 

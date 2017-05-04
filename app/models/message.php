@@ -27,26 +27,26 @@ class Message extends BaseModel{
         
     }
     
-    public function all_messages(){
+    public function all_messages($receiver_id){
         
          $query = DB::connection()->prepare('SELECT * FROM Viesti INNER JOIN Kayttajanviesti ON msg_id = viestinid AND vastaanottajaid = :receiver_id ');
-         $query->execute();
+         $query->execute(array('receiver_id' => $receiver_id));
          $rows = $query->fetchAll();
-         $friends=array();
+         $messages=array();
          
          foreach ($rows as $row){
              $messages[] = new Message(array(
                  'sent_id' => $row['sent_id'],
                  'msg_id'=> $row['msg_id'],
-                 'sender_id'=> $row['sender_id'],
-                 'receiver_id' => $row['receiver_id'],
-                 'subject'=> $row['subject'],
-                 'message' => $row['message']
+                 'sender_id'=> $row['lahettajaid'],
+                 'receiver_id' => $row['vastaanottajaid'],
+                 'subject'=> $row['aihe'],
+                 'message' => $row['sisalto']
                
                 
              ));
          }
-         return $friends;
+         return $messages;
          
     }
     }

@@ -1,9 +1,6 @@
 <?php
 
 class MessageController extends BaseController{
- public static function inbox(){ 
-    View::make('message/inbox.html');
-    }
     
   public static function send($user_id){
         $params = $_POST;
@@ -23,8 +20,8 @@ class MessageController extends BaseController{
   }
   
    public static function show_messages(){
-       $user_id = $_SESSION['user'];
-       $messages = Message::all_messages($user_id);
+       $receiver_id = $_SESSION['user'];
+       $messages = Message::all_messages($receiver_id);
        View::make('message/inbox.html', array('messages' => $messages));
     }
      

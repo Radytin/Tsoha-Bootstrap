@@ -57,7 +57,7 @@ $routes ->post('/logout', function(){
 UserController::logout();    
 });
 $routes->get('/messages', function(){
-MessageController::inbox();
+MessageController::show_messages();
 });
 $routes->get('/users/:user_id/message', function($user_id){
 UserController::createMessage($user_id);    
