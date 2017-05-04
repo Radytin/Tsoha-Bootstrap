@@ -2,7 +2,7 @@
 
 Yleisiä linkkejä:
 
-* [Linkki sovellukseeni](www.hamalkre.users.cs.helsinki.fi/FINDAFRIEND)
+* [Linkki sovellukseeni](http://hamalkre.users.cs.helsinki.fi/FINDAFRIEND/)
 * [Linkki dokumentaatiooni](https://github.com/Radytin/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 
@@ -12,3 +12,4 @@ Kun käyttäjä on rekisteröitynyt, hän voi määrittää millaiseen toimintaa
 
 ##Käyttöohjeita
 Testikäytön tunnukset:  Käyttäjätunnus: testi Salasana: testi
+
