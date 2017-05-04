@@ -28,7 +28,8 @@ class Friend extends BaseModel{
                  'relation_id' => $row['relation_id'],
                  'adder_id'=> $row['lisaajaid'],
                  'friend_id'=> $row['lisattavaid'],
-                 'name'=> $row['username']
+                 'name'=> $row['username'],
+                 'friend_id'=> $row['user_id']    
                
                 
              ));

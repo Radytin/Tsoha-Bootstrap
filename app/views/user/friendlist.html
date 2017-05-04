@@ -3,7 +3,7 @@
   <p><strong>Käyttäjän kaverit</strong></p>
    {% for friend in friends %}
         <tr>
-            <td>{{friend.name}}</td><br>
+            <td><a href="{{base_path}}/users/{{friend.friend_id}}">{{friend.name}}</a></td><br>
   
              
         </tr>
