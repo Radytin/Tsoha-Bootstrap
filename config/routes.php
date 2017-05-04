@@ -40,12 +40,12 @@ FriendController::add_friend($user_id);
 $routes->get('/edit', function(){
   UserController::edit();
 });
-$routes->post('/edit', function($user_id){
-  UserController::update($user_id);
+$routes->post('/edit', function(){
+  UserController::update();
 });
 
-$routes->post('/destroy', function($user_id){
-  UserController::destroy($user_id);
+$routes->post('/edit/destroy', function(){
+  UserController::destroy();
 });
 $routes->get('/login', function(){
 UserController::login();

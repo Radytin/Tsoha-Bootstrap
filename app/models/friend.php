@@ -2,7 +2,7 @@
 
 class Friend extends BaseModel{
     
-  public $relation_id, $adder_id, $friend_id;
+  public $relation_id, $adder_id, $friend_id, $username;
   
   public function __construct($attributes) {
         parent::__construct($attributes);
@@ -23,11 +23,10 @@ class Friend extends BaseModel{
          $friends=array();
          
          foreach ($rows as $row){
-             $friends[] = new User(array(
-                 'user_id' => $row['user_id'],
-                 'username'=> $row['username'],
-                 'password'=> $row['password'],
-                 'bio' => $row['bio']
+             $friends[] = new Friend(array(
+                 'relation_id' => $row['relation_id'],
+                 'username'=> $row['username']
+               
                 
              ));
          }

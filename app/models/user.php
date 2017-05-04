@@ -59,14 +59,13 @@ class User extends BaseModel{
          
     }
     public function update(){
-        $query = DB::connection()->prepare('UPDATE Kayttaja (username, password, bio) SET (:username, :password, :bio) RETURNING user_id');
-        $query -> execute(array('username' => $this->username, 'password' => $this->password, 'bio' => $this->bio));
-        $row = $query->fetch();
-        $this->user_id = $row['user_id'];
+        $query = DB::connection()->prepare('UPDATE Kayttaja SET (username, password, bio) = (:username, :password, :bio) WHERE user_id = :user_id');
+        $query -> execute(array('user_id'=> $this->user_id, 'username' => $this->username, 'password' => $this->password, 'bio' => $this->bio));
+        
          
     }
       public function destroy(){
-        $query = DB::connection()->prepare('DELETE FROM Kayttaja WHERE user_id = :user_id LIMIT 1 ');
+        $query = DB::connection()->prepare('DELETE FROM Kayttaja WHERE user_id = :user_id');
         $query->execute(array('user_id' => $this->user_id));
          
     }

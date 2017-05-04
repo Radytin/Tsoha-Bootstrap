@@ -7,15 +7,16 @@
   </p>
   <p>
    <form method="post" action="{{base_path}}/users/{{user.userid}}"> 
+   <input type="hidden" name="user_id" value="{{user.user_id}}" />
     <button type="submit" class="btn btn-primary">Lisää kaveriksi</button>
   </p>
 </form>
   <p>{{user.bio}}</p>
   
   <p><strong>Käyttäjän {{user.username}} kaverit</strong></p>
-   {% for user in friends %}
+   {% for friend in friends %}
         <tr>
-          <td><a href="{{base_path}}/users/{{user.user_id}}">{{user.username}}</td>
+          <td>{{friend.username}}</td>
   
              
         </tr>

@@ -2,6 +2,12 @@
 
 class UserController extends BaseController{
     
+    public static function logged_user(){
+      $user_id = $_SESSION['user'];
+      $user = User::findId($user_id);
+      View::make('base.html', array('user' => $user));
+    }
+
     
     public static function index(){
         $users = User::all();
@@ -45,16 +51,15 @@ class UserController extends BaseController{
     
   }
   public static function edit(){
-      self::check_logged_in();
       $user_id = $_SESSION['user'];
       $user = User::findId($user_id);
-      View::make('user/edit.html', array('attributes' => $user));
+      View::make('user/edit.html', array('user' => $user));
   }
   
-  public static function update($user_id){
+  public static function update(){
       self::check_logged_in();
       $params = $_POST;
-      
+      $user_id = $_SESSION['user'];
       $attributes = array(
           'user_id'=> $user_id,
           'username' => $params['username'],
@@ -75,6 +80,7 @@ class UserController extends BaseController{
   }
   public static function destroy(){
        self::check_logged_in();
+      $user_id = $_SESSION['user'];
       $user = new User(array('user_id' => $user_id));
       $user -> destroy();
       Redirect::to('/users', array('message' => 'Käyttäjätunnuksesi on poistettu onnistuneesti!'));
